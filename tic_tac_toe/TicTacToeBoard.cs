@@ -36,8 +36,7 @@ namespace tic_tac_toe
         return true;
       }
     }
-  
- 
+
     public override List<Space> OpenSquares
     {
       get

@@ -5,7 +5,7 @@ namespace tic_tac_toe
 {
   public partial class TicTacToeGUI : Form
   {
-     GameBoard gb;
+    GameBoard gb;
 
     public TicTacToeGUI()
     {
@@ -27,7 +27,10 @@ namespace tic_tac_toe
       button9.Enabled = true;
 
     }
-    
+
+    /// <summary>
+    /// Dirty, but it reloads the board display to account for all moves played so far.
+    /// </summary>
     private void LoadBoard()
     {
       if (gb[0, 0] == Player.Open)
@@ -102,9 +105,11 @@ namespace tic_tac_toe
         button9.Enabled = false;
       }
     }
-   
-  }
-   private void button_click(object sender, EventArgs e)
+
+    /// <summary>
+    /// Button click event
+    /// </summary>
+    private void button_click(object sender, EventArgs e)
     {
       Space s = (Space)sender;
 
@@ -127,30 +132,31 @@ namespace tic_tac_toe
         Form1_Load(null, new EventArgs());  //Winner was found, reload the game
 
     }
-  
+
     /// <summary>
     /// Checks the current board for a winner and acts appropriately
     /// </summary>
     /// <returns></returns>
     public bool CheckForWinners()
     {
-        Player? p = gb.Winner;
+      Player? p = gb.Winner;
 
-        if (p == Player.X)
-        {
-            MessageBox.Show("Computer Wins");
-            return true;
-        }
-        else if (p == Player.O)
-        {
-            MessageBox.Show("You Win!");
-            return true;
-        }
-        else if (gb.IsFull)
-        {
-            MessageBox.Show("Draw Game");
-            return true;
-        }
-        return false;
+      if (p == Player.X)
+      {
+        MessageBox.Show("Computer Wins");
+        return true;
+      }
+      else if (p == Player.O)
+      {
+        MessageBox.Show("You Win!");
+        return true;
+      }
+      else if (gb.IsFull)
+      {
+        MessageBox.Show("Cat's Game");
+        return true;
+      }
+      return false;
     }
+  }
 }
