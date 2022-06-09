@@ -27,6 +27,81 @@ namespace tic_tac_toe
       button9.Enabled = true;
 
     }
+    
+    private void LoadBoard()
+    {
+      if (gb[0, 0] == Player.Open)
+        button1.Text = "";
+      else
+      {
+        button1.Text = gb[0, 0].ToString();
+        button1.Enabled = false;
+      }
+
+      if (gb[0, 1] == Player.Open)
+        button2.Text = "";
+      else
+      {
+        button2.Text = gb[0, 1].ToString();
+        button2.Enabled = false;
+      }
+
+      if (gb[0, 2] == Player.Open)
+        button3.Text = "";
+      else
+      {
+        button3.Text = gb[0, 2].ToString();
+        button3.Enabled = false;
+      }
+
+      if (gb[1, 0] == Player.Open)
+        button4.Text = "";
+      else
+      {
+        button4.Text = gb[1, 0].ToString();
+        button4.Enabled = false;
+      }
+
+      if (gb[1, 1] == Player.Open)
+        button5.Text = "";
+      else
+      {
+        button5.Text = gb[1, 1].ToString();
+        button5.Enabled = false;
+      }
+
+      if (gb[1, 2] == Player.Open)
+        button6.Text = "";
+      else
+      {
+        button6.Text = gb[1, 2].ToString();
+        button6.Enabled = false;
+      }
+
+      if (gb[2, 0] == Player.Open)
+        button7.Text = "";
+      else
+      {
+        button7.Text = gb[2, 0].ToString();
+        button7.Enabled = false;
+      }
+
+      if (gb[2, 1] == Player.Open)
+        button8.Text = "";
+      else
+      {
+        button8.Text = gb[2, 1].ToString();
+        button8.Enabled = false;
+      }
+
+      if (gb[2, 2] == Player.Open)
+        button9.Text = "";
+      else
+      {
+        button9.Text = gb[2, 2].ToString();
+        button9.Enabled = false;
+      }
+    }
    
   }
     /// <summary>
