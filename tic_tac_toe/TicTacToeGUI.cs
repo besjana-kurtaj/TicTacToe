@@ -29,4 +29,29 @@ namespace tic_tac_toe
     }
    
   }
+    /// <summary>
+    /// Checks the current board for a winner and acts appropriately
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckForWinners()
+    {
+        Player? p = gb.Winner;
+
+        if (p == Player.X)
+        {
+            MessageBox.Show("Computer Wins");
+            return true;
+        }
+        else if (p == Player.O)
+        {
+            MessageBox.Show("You Win!");
+            return true;
+        }
+        else if (gb.IsFull)
+        {
+            MessageBox.Show("Draw Game");
+            return true;
+        }
+        return false;
+    }
 }
