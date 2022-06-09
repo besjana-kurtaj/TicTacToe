@@ -104,6 +104,30 @@ namespace tic_tac_toe
     }
    
   }
+   private void button_click(object sender, EventArgs e)
+    {
+      Space s = (Space)sender;
+
+      gb[s.X, s.Y] = Player.O;
+      LoadBoard();
+      if (CheckForWinners())
+        Form1_Load(null, new EventArgs());  //Winner was found, reload the game
+
+      if (gb.OpenSquares.Count == gb.Size) //if all spaces are open, randomly pick one for excitement
+      {
+        Random r = new Random();
+        s = new Space(r.Next(0, 3), r.Next(0, 3));
+      }
+      else
+        s = AI.GetBestMove(gb, Player.X);
+
+      gb[s.X, s.Y] = Player.X;
+      LoadBoard();
+      if (CheckForWinners())
+        Form1_Load(null, new EventArgs());  //Winner was found, reload the game
+
+    }
+  
     /// <summary>
     /// Checks the current board for a winner and acts appropriately
     /// </summary>
