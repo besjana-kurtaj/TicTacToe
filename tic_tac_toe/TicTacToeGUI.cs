@@ -153,7 +153,7 @@ namespace tic_tac_toe
       }
       else if (gb.IsFull)
       {
-        MessageBox.Show("Cat's Game");
+        MessageBox.Show("Tie Game");
         return true;
       }
       return false;
